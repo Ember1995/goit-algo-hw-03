@@ -32,11 +32,13 @@ def read_folder(path: Path) -> None:
         else:
             copy_file(el)
 
+
 @handle_exceptions
 def copy_file(file: Path) -> None:
     ext = file.suffix.lower().strip('.')
     new_path = Path(output) / ext
     new_path.mkdir(exist_ok=True, parents=True)
     copyfile(file, new_path / file.name)
+
 
 read_folder(Path(source))
