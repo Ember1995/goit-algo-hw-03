@@ -1,5 +1,6 @@
 import turtle
 
+
 def koch_curve(t, order, size):
     if order == 0:
         t.forward(size)
